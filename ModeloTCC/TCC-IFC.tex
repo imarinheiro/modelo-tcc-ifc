@@ -1,0 +1,314 @@
+% ------------------------------------------------------------------------
+% Modelo de Trabalho de Conclusão de Curso em conformidade com 
+% ABNT NBR 14724:2011: Informacao e documentacao - Trabalhos academicos -
+% Apresentacao
+% ------------------------------------------------------------------------
+
+\documentclass[12pt, oneside, a4paper, brazil]{abntex2}
+% ---
+% Pacotes básicos 
+% ---
+\usepackage{lmodern}			     % Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		   % Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		 % Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			     % Usado pela Ficha catalográfica
+\usepackage{indentfirst}		   % Indenta o primeiro parágrafo de cada seção.
+\usepackage{color,xcolor}			 % Controle das cores
+\usepackage{graphicx}			     % Inclusão de gráficos
+\usepackage{microtype} 			   % para melhorias de justificação
+\usepackage[alf]{abntex2cite}	 % Citações padrão ABNT
+\usepackage{lipsum}            % Pode ser removido no final
+\usepackage{listingsutf8}
+
+
+
+% Altera o nome padrão do rótulo usado no comando \autoref{}
+\renewcommand{\lstlistingname}{Código}
+% Altera o rótulo a ser usando no elemento pré-textual "Lista de código"
+\renewcommand{\lstlistlistingname}{Lista de códigos}
+
+% Configura a ``Lista de Códigos'' conforme as regras da ABNT (para abnTeX2)
+\begingroup\makeatletter
+\let\newcounter\@gobble\let\setcounter\@gobbletwo
+  \globaldefs\@ne \let\c@loldepth\@ne
+  \newlistof{listings}{lol}{\lstlistlistingname}
+  \newlistentry{lstlisting}{lol}{0}
+\endgroup
+
+\renewcommand{\cftlstlistingaftersnum}{\hfill--\hfill}
+
+\let\oldlstlistoflistings\lstlistoflistings
+\renewcommand{\lstlistoflistings}{%
+   \begingroup%
+   \let\oldnumberline\numberline%
+   \renewcommand{\numberline}{\lstlistingname\space\oldnumberline}%
+   \oldlstlistoflistings%
+   \endgroup}
+
+\definecolor{fundo}{HTML}{DCDCDC}
+
+\lstdefinestyle{estiloCodigos}{
+    alsoother={0123456789_},
+    backgroundcolor=\color{fundo},    % Cor de fundo
+    basicstyle=\ABNTEXfontereduzida, 
+    breakatwhitespace=false,          
+    breaklines=true,                  
+    captionpos=b,                     
+    commentstyle=\color{green},       % cor de comentário
+    deletekeywords={...},             % keywords excluídas da linguagem
+    escapeinside={\%*}{*)},           % if you want to add LaTeX within your code
+    extendedchars=true,               % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+    frame=single,                    % adds a frame around the code
+    inputencoding=utf8,
+    keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+    keywordstyle=\color{blue},       % keyword style
+    literate={á}{{\'a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {è}{{\`{e}}}1 {ê}{{\^{e}}}1 {ë}{{\¨{e}}}1 {É}{{\'{E}}}1 {Ê}{{\^{E}}}1 {û}{{\^{u}}}1 {ú}{{\'{u}}}1 {â}{{\^{a}}}1 {à}{{\`{a}}}1 {á}{{\'{a}}}1 {ã}{{\~{a}}}1 {Á}{{\'{A}}}1 {Â}{{\^{A}}}1 {Ã}{{\~{A}}}1 {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1 {õ}{{\~{o}}}1 {ó}{{\'{o}}}1 {ô}{{\^{o}}}1 {Õ}{{\~{O}}}1 {Ó}{{\'{O}}}1 {Ô}{{\^{O}}}1 {î}{{\^{i}}}1 {Î}{{\^{I}}}1 {í}{{\'{i}}}1 {Í}{{\~{Í}}}1,
+    % if you want to add more keywords to the set
+    morekeywords={*, :-},
+    numberbychapter=false,
+    numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+    numbersep=5pt,                   % how far the line-numbers are from the code
+    % the style that is used for the line-numbers
+    %numberstyle=\tiny\color{theframe}\sffamily, 
+    numberstyle=\tiny\sffamily, 
+    %rulecolor=\color{theframe},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+    showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+    showstringspaces=false,          % underline spaces within strings only
+    showtabs=false,                  % show tabs within strings adding particular underscores
+    stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+    %stringstyle=\color{mymauve}\itshape,     % string literal style
+    stringstyle=\ttfamily,     % string literal style
+    tabsize=2,                       % sets default tabsize to 2 spaces
+    title=\lstname,                  % show the filename of files included with \lstinputlisting; also try caption instead of title
+    framexleftmargin=10pt,
+    framexleftmargin=15pt
+}
+\lstset{escapechar=@,style=estiloCodigos}
+
+
+\include{definicoes}
+% Informações de dados para CAPA e FOLHA DE ROSTO
+\instituicao{%
+  Instituto Federal Catarinense -- IFC
+  \par
+  Câmpus Araquari
+  \par
+  Bacharelado em Sistemas de Informação}
+\tipotrabalho{Monografia (Graduação)}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Trabalho de conclusão de curso apresentado como requisito parcial para a obtenção do grau de bacharel em Sistemas de Informação do Instituto Federal Catarinense.}
+
+
+% Configurações de aparência do PDF final
+% informações do PDF
+\makeatletter
+\hypersetup{
+   	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+   	pdfsubject={\imprimirpreambulo},
+    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+   	linkcolor=blue,          	% color of internal links
+   	citecolor=blue,        		% color of links to bibliography
+   	filecolor=magenta,     		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+
+% Espaçamentos entre linhas e parágrafos 
+
+\setlength{\parindent}{1.3cm}			% O tamanho do parágrafo é dado por:
+\setlength{\parskip}{0.2cm}  			% Controle do espaçamento entre um parágrafo e outro:
+
+
+% Início do documento
+\begin{document}
+%\selectlanguage{english}
+\selectlanguage{brazil} 				% Seleciona o idioma do documento (conforme pacotes do babel)
+\frenchspacing 							    % Retira espaço extra obsoleto entre as frases.
+
+% ELEMENTOS PRÉ-TEXTUAIS
+\imprimircapa							% Capa
+\imprimirfolhaderosto*		% Folha de rosto
+								          % (o * indica que haverá a ficha bibliográfica)
+
+% Inserir a ficha bibliografica
+
+% Isto é um exemplo de Ficha Catalográfica, ou ``Dados internacionais de 
+% catalogação-na-publicação''. Utilizar este modelo como referência. 
+% Porém, provavelmente a biblioteca fornecerá um PDF com a ficha catalográfica 
+% definitiva após a defesa do trabalho. Quando estiver com o documento, salve-o como PDF 
+% no diretório do seu projeto e substitua todo o conteúdo de implementação deste arquivo 
+% pelo comando abaixo:
+%
+% \begin{fichacatalografica}
+%     \includepdf{fig_ficha_catalografica.pdf}
+% \end{fichacatalografica}
+
+\input{fichacatalografica}
+
+
+% Inserir folha de aprovação
+
+% Exemplo de Folha de aprovação, elemento obrigatório da NBR 14724/2011 (seção 4.2.1.3). 
+% Utilizar este modelo até a aprovação do trabalho. Após isso, substitua todo o conteúdo 
+% deste arquivo por uma imagem da página assinada pela banca com o comando abaixo:
+%
+% \includepdf{folhadeaprovacao_final.pdf}
+%
+\begin{folhadeaprovacao}
+
+  \begin{center}
+    {\ABNTEXchapterfont\large\imprimirautor}
+
+    \vspace*{\fill}\vspace*{\fill}
+    \begin{center}
+      \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+    \end{center}
+    \vspace*{\fill}
+    
+    \hspace{.45\textwidth}
+    \begin{minipage}{.5\textwidth}
+        \imprimirpreambulo
+    \end{minipage}%
+    \vspace*{\fill}
+   \end{center}
+        
+   Trabalho aprovado. \imprimirlocal, 24 de novembro de 2016:
+
+   \assinatura{\textbf{\imprimirorientador} \\ Orientador} 
+   \assinatura{\textbf{Professor} \\ Convidado 1}
+   \assinatura{\textbf{Professor} \\ Convidado 2}
+   %\assinatura{\textbf{Professor} \\ Convidado 3}
+   %\assinatura{\textbf{Professor} \\ Convidado 4}
+      
+   \begin{center}
+    \vspace*{0.5cm}
+    {\large\imprimirlocal}
+    \par
+    {\large\imprimirdata}
+    \vspace*{1cm}
+  \end{center}
+  
+\end{folhadeaprovacao}
+% ---
+
+\input{dedicatoria}
+\input{resumo}
+\input{indices-siglas}
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ---
+% Inclusão de capítulo de Introdução ao trabalho
+% ---
+\input{introducao}
+% ---
+% Inclusão de outros capitulos
+% ---
+\input{referencial}
+\input{resultados}
+
+% ----------------------------------------------------------
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espaço de parte no Sumário
+% ----------------------------------------------------------
+\phantompart
+
+\input{conclusao}
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{referencias}
+
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
+
+% ----------------------------------------------------------
+% Apêndices
+% ----------------------------------------------------------
+
+% ---
+% Inicia os apêndices
+% ---
+\begin{apendicesenv}
+
+% Imprime uma página indicando o início dos apêndices
+\partapendices
+
+% ----------------------------------------------------------
+\chapter{Quisque libero justo}
+% ----------------------------------------------------------
+
+\lipsum[50]
+
+% ----------------------------------------------------------
+\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
+ac pretium ante justo a nulla curabitur tristique arcu eu metus}
+% ----------------------------------------------------------
+\lipsum[55-57]
+
+\end{apendicesenv}
+% ---
+
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+
+% ---
+% Inicia os anexos
+% ---
+\begin{anexosenv}
+
+% Imprime uma página indicando o início dos anexos
+\partanexos
+
+% ---
+\chapter{Morbi ultrices rutrum lorem.}
+% ---
+\lipsum[30]
+
+% ---
+\chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
+parturient montes nascetur ridiculus mus}
+% ---
+
+\lipsum[31]
+
+% ---
+\chapter{Fusce facilisis lacinia dui}
+% ---
+
+\lipsum[32]
+
+\end{anexosenv}
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+\phantompart
+\printindex
+%---------------------------------------------------------------------
+
+\end{document}
