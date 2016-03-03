@@ -1,0 +1,141 @@
+\documentclass[12pt,article,a4paper,brazil,oldfontcommands,oneside]{abntex2}
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{nomencl} 			% Lista de simbolos
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{rotating}
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+% Configuração de Margens e espaços
+\setlrmarginsandblock{3cm}{3cm}{*}
+\setulmarginsandblock{3cm}{3cm}{*}
+\setlength{\ABNTEXcitacaorecuo}{1.8cm}
+\checkandfixthelayout
+\setlength{\parindent}{1.3cm}			% O tamanho do parágrafo é dado por:
+\setlength{\parskip}{0.2cm}  			% Controle do espaçamento entre um parágrafo e outro:
+%\SingleSpacing
+
+% Informações de dados para CAPA e FOLHA DE ROSTO
+\titulo{Modelo de Projeto de TCC do \\ IFC - Araquari usando \abnTeX}
+\autor{Nome do Aluno \and Orientador: Nome do Orientador}
+\local{Araquari -- SC -- Brasil}
+\data{Setembro de 2015}
+
+% Configurações de aparência do PDF final
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={Modelo de projeto e TCC},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex2}{modelo}{TCC}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      	% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+
+% compila o indice
+\makeindex
+
+
+% Início do documento
+\begin{document}
+
+\frenchspacing 		% Retira espaço extra obsoleto entre as frases.
+\maketitle			% página de titulo
+
+
+\section{Tema}
+
+O tema é a parte geral da pesquisa; é amplo, porém claro e objetivo, seguido da delimitação do tema, que deve ser ``funilado'', isto porque o pesquisador deve terminar seu trabalho em prazo determinado. Não delimitando o tema, o trabalho ficará muito amplo, o que dificultará seu término{marconi}.
+
+\subsection{Delimitação do Tema}
+
+O tema é a parte geral da pesquisa; é amplo, porém claro e objetivo, seguido da delimitação do tema, que deve ser ''funilado'', isto porque o pesquisador deve terminar seu trabalho em prazo determinado. Não delimitando o tema, o trabalho ficará muito amplo, o que dificultará seu término.
+
+Alguns exemplos delimitados:
+
+\begin{enumerate}
+\item gravidez na adolescência: um estudo demonstrativo da gravidez entre as adolescentes de 14 a 18 anos na cidade de Araquari - Santa Catarina;
+\item usuários de drogas: o que leva os adolescentes do sexo masculino entre 18 e 25 anos a fazerem uso de drogas na região Nordeste de Santa Catarina;
+\end{enumerate}
+
+\section{Problema}
+
+O problema é a mola propulsora de todo o trabalho de pesquisa. Depois de definido o tema, levanta-se uma questão para ser respondida através de uma hipótese, que será confirmada ou negada através do trabalho de pesquisa. O Problema é criado pelo próprio autor e relacionado ao tema escolhido. O autor, no caso, criará um questionamento para definir a abrangência de sua pesquisa. Não há regras para se criar um Problema, mas alguns autores sugerem que ele seja expresso em forma de pergunta. Particularmente, prefiro que o Problema seja descrito como uma afirmação.
+
+Segundo \citeonline[p. 220]{marconi} ``a formulação do problema prende-se ao tema proposto: ela esclarece a dificuldade específica com a qual se defronta e que se pretende resolver por intermédio da pesquisa''. 
+
+\section{Justificativa}
+
+É a parte em que o pesquisador expõe a relevância de seu trabalho quer na sociedade acadêmica, quer na sociedade científica ou na sociedade civil. Ele demonstrará a importância de seu trabalho e os benefícios que este trará à humanidade.
+
+A Justificativa num projeto de pesquisa, como o próprio nome indica, é o convencimento de que o trabalho de pesquisa é fundamental de ser efetivado. O tema escolhido pelo pesquisador e a Hipótese levantada são de suma importância, para a sociedade ou para alguns indivíduos, de ser comprovada.
+
+Deve-se tomar o cuidado, na elaboração da Justificativa, de não se tentar justificar a Hipótese levantada, ou seja, tentar responder ou concluir o que vai ser buscado no trabalho de pesquisa. A Justificativa exalta a importância do tema a ser estudado, ou justifica a necessidade imperiosa de se levar a efeito tal empreendimento. 
+
+\section{Objetivos}
+\subsection{Objetivo Geral do Trabalho}
+
+A definição do Objetivo geral determina o que o pesquisador quer atingir com a realização do trabalho de pesquisa. Objetivo é sinônimo de meta, fim.
+
+O objetivo geral pode ser um apanhado da problematização, até onde o pesquisador quer levar o seu estudo e a demonstração deste. Fazendo uso do mesmo tema, pode-se gerar o seguinte objetivo:
+
+É importante lembrar que todos os objetivos, quer geral quer específicos, devem iniciar com verbo no infinitivo, assim: estudar, demonstrar, cultivar, proporcionar, especificar etc. Por exemplo: esclarecer tal coisa; definir tal assunto; procurar aquilo; permitir aquilo outro, demonstrar alguma coisa etc.
+
+\subsection{Objetivos Específicos}
+
+Os objetivos específicos podem ser entendidos como as tarefas que, se realizadas, levarão ao cumprimento do Objetivo Geral. São as etapas principais do Projeto.
+
+Os objetivos específicos também serão baseados na problematização e têm a função de, juntos, levar à realização do objetivo geral, ou seja, o pesquisador, por meio dos objetivos específicos, chega ao objetivo geral. 
+
+\section{Metodologia}
+
+A Metodologia é a explicação minuciosa, detalhada, rigorosa e exata de toda ação desenvolvida no método (caminho) do trabalho de pesquisa. É a explicação do tipo de pesquisa, do instrumental utilizado (questionário, entrevista etc), do tempo previsto, da equipe de pesquisadores e da divisão do trabalho, das formas de tabulação e tratamento dos dados, enfim, de tudo aquilo que se utilizou no trabalho de pesquisa.
+
+A metodologia é o conjunto de técnicas que o pesquisador utiliza para realizar seu trabalho. São aplicadas, dentre elas a observação direta intensiva, em que se inclui a própria observação e a entrevista. Há, também, a observação direta extensiva que, inclui o questionário, testes, análise de conteúdo, história de vida e pesquisa de mercado, dentre outras.
+
+Exemplo:
+\begin{enumerate}
+\item Estudo de caso
+\item Estudo comparativo
+\item Pesquisa Teórica
+\item Pesquisa Laboratorial
+\item Aplicação
+\item Avaliação
+\item Avaliação de desempenho
+\item Simulação
+\item Questionários/Entrevistas 
+\end{enumerate}
+
+
+\section{Cronograma}
+
+\begin{table}[h]
+\centering
+%\caption{Cronograma de atividades proposto}
+\begin{tabular}{r||c|c|c|c|c|c} \hline
+{\bf Atividades}        & {\bf Mês 1}	& {\bf  Mês 2} & {\bf  Mês 3} & {\bf  Mês 4} & {\bf  Mês 5}& {\bf  Mês 6} 
+\\ \hline \hline
+Levantamento do tema 	& \textbullet 	& 		& 		&	 	&		&	\\ \hline 
+Pesquisa do tema	& \textbullet	& \textbullet	& \textbullet	&		&		&	\\ \hline
+Atividade 1     	&	        & \textbullet	& \textbullet	& \textbullet	& \textbullet	& \textbullet \\ \hline
+Atividade 2	        & 		& \textbullet	&		&		&	& \textbullet	\\ \hline
+Conclusões		&		&		&		&		&	& \textbullet	\\ \hline
+Apresentação		&		&		&		&		&	& \textbullet	\\ \hline
+\end{tabular}
+\label{tab:cronograma}
+\end{table}
+
+
+\bibliography{refs}
+\end{document}
